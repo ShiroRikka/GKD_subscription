@@ -4,10 +4,10 @@ import categories from './categories';
 import globalGroups from './globalGroups';
 
 export default defineGkdSubscription({
-  id: 233,
+  id: 5119,
   name: 'Subscription',
-  version: 0,
-  author: 'author',
+  version: 1,
+  author: 'ShiroRikka',
   checkUpdateUrl: './gkd.version.json5',
   supportUri: 'https://github.com/gkd-kit/subscription-template',
   categories,
