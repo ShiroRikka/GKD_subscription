@@ -6,7 +6,7 @@ export default defineGkdApp({
   groups: [
     {
       key: 0,
-      name: '工具-预填信息购票-确定',
+      name: '自动点击-预填信息购票-确定',
       resetMatch: 'app',
       priorityTime: 10000,
       actionCd: 100,
