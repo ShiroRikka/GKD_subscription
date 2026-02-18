@@ -14,6 +14,10 @@ export default defineGkdApp({
       rules: [
         {
           matches: 'Button[text="确定"]',
+          excludeMatches: [
+            'TextView[text*="确定交换发到站吗"]',
+            'TextView[text*="您搜索的"]',
+          ],
         },
       ],
     },
