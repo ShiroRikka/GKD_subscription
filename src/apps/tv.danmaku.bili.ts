@@ -72,7 +72,14 @@ export default defineGkdApp({
         },
         {
           key: 2,
-          name: '点击提交订单',
+          name: '点击提交订单1',
+          matches: 'TextView[text*="合计"] +(n) Button[text="提交订单"]',
+          excludeMatches: '[text="再试一次"]',
+          action: 'clickCenter',
+        },
+        {
+          key: 3,
+          name: '点击提交订单2',
           matches: 'Button[text="提交订单"]',
           excludeMatches: '[text="再试一次"]',
           action: 'clickCenter',
