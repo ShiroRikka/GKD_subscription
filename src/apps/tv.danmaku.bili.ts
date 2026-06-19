@@ -15,7 +15,7 @@ export default defineGkdApp({
         {
           action: 'clickCenter',
           anyMatches: ['Button[text="立即购票"]', 'Button[text="立即预定"]'],
-          excludeAllMatches: ['TextView[text*="请选择"]'],
+          excludeMatches: ['TextView[text*="请选择"]'],
         },
       ],
     },
