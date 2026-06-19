@@ -15,7 +15,7 @@ export default defineGkdApp({
         {
           key: 0,
           matches:
-            'TextView[text*="合计 ¥"] +(n) Button[text="立即购票" || text="立即预定"]',
+            '[text*="合计 ¥"] < View > Button[text="立即购票" || text="立即预定"]',
         },
         // rules: [
         //   {
