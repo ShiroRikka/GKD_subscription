@@ -15,7 +15,7 @@ export default defineGkdApp({
       fastQuery: true,
       rules: [
         {
-          matches: 'Button[text="立即购票" || text="立即预定"]',
+          anyMatches: ['Button[text="立即购票"]', 'Button[text="立即预定"]'],
           excludeMatches: ['TextView[text*="请选择"]'],
         },
         // rules: [
