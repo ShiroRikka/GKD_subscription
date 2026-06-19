@@ -14,7 +14,7 @@ export default defineGkdApp({
       rules: [
         {
           key: 0,
-          matches: 'Button[text="立即购票"]',
+          matches: '[text*="合计 ¥"] +(n) Button[text="立即购票"]',
         },
         // rules: [
         //   {
