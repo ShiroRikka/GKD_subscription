@@ -9,25 +9,14 @@ export default defineGkdApp({
       name: '自动点击-立即购票',
       desc: '自动点击"立即购票"',
       resetMatch: 'app',
-      forcedTime: 3600000,
-      matchTime: 3600000,
       actionCd: 200,
       fastQuery: true,
       rules: [
         {
+          action: 'clickCenter',
           anyMatches: ['Button[text="立即购票"]', 'Button[text="立即预定"]'],
-          excludeMatches: ['TextView[text*="请选择"]'],
+          excludeAllMatches: ['TextView[text*="请选择"]'],
         },
-        // rules: [
-        //   {
-        //     key: 0,
-        //     matches: '[text="即将开售" || text="立即预定"]',
-        //   },
-        // {
-        //   key: 1,
-        //   matches: 'Button[text="立即购票"]',
-        //   excludeMatches: '[text="倒计时"]',
-        // },
       ],
     },
     {
@@ -61,3 +50,13 @@ export default defineGkdApp({
     },
   ],
 });
+// rules: [
+//   {
+//     key: 0,
+//     matches: '[text="即将开售" || text="立即预定"]',
+//   },
+// {
+//   key: 1,
+//   matches: 'Button[text="立即购票"]',
+//   excludeMatches: '[text="倒计时"]',
+// },
