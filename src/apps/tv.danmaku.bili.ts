@@ -10,12 +10,11 @@ export default defineGkdApp({
       desc: '自动点击"立即购票"',
       resetMatch: 'app',
       actionCd: 200,
-      fastQuery: true,
       rules: [
         {
           key: 0,
           matches:
-            '[text*="合计 ¥"] < View > Button[text="立即购票" || text="立即预定"]',
+            'TextView[text*="合计 ¥"] +(n) Button[text="立即购票" || text="立即预定"]',
         },
         // rules: [
         //   {
