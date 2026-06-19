@@ -7,7 +7,7 @@ export default defineGkdApp({
     {
       key: 0,
       name: '自动点击-演唱会购票',
-      desc: '自动点击"即将开售"/"立即预定"进入订单页，不含灰色"立刻购票"以避免风控',
+      desc: '自动点击"即将开售"/"立即预定"以及"立即购票"（页面无"倒计时"时）进入订单页',
       resetMatch: 'app',
       actionCd: 200,
       fastQuery: true,
@@ -15,6 +15,11 @@ export default defineGkdApp({
         {
           key: 0,
           matches: '[text="即将开售" || text="立即预定"]',
+        },
+        {
+          key: 1,
+          matches: '[text="立即购票"]',
+          excludeMatches: '[text="倒计时"]',
         },
       ],
     },
