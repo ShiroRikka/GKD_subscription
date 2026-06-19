@@ -29,14 +29,28 @@ export default defineGkdApp({
       rules: [
         {
           key: 1,
-          name: '点击立即购票',
-          matches: 'Button[text="立即购票"]',
+          name: '点击立即购票1',
+          matches: 'TextView[text*="合计"] +(n) Button[text="立即购票"]',
           excludeMatches: '[text^="请选择"]',
           action: 'clickCenter',
         },
         {
           key: 2,
-          name: '点击立即预定',
+          name: '点击立即预定1',
+          matches: 'TextView[text*="合计"] +(n) Button[text="立即预定"]',
+          excludeMatches: '[text^="请选择"]',
+          action: 'clickCenter',
+        },
+        {
+          key: 3,
+          name: '点击立即购票2',
+          matches: 'Button[text="立即购票"]',
+          excludeMatches: '[text^="请选择"]',
+          action: 'clickCenter',
+        },
+        {
+          key: 4,
+          name: '点击立即预定2',
           matches: 'Button[text="立即预定"]',
           excludeMatches: '[text^="请选择"]',
           action: 'clickCenter',
