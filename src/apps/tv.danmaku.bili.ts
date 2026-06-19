@@ -18,7 +18,7 @@ export default defineGkdApp({
         },
         {
           key: 1,
-          matches: '[text="立即购票"]',
+          matches: 'Button[text="立即购票"]',
           excludeMatches: '[text="倒计时"]',
         },
       ],
