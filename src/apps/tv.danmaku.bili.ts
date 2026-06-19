@@ -13,7 +13,7 @@ export default defineGkdApp({
         {
           key: 1,
           name: '点击即将开售',
-          matches: '[text="即将开售"]',
+          matches: 'Button[text="即将开售"]',
           action: 'clickCenter',
           actionMaximum: 1,
           actionCd: 2000,
@@ -30,13 +30,14 @@ export default defineGkdApp({
         {
           key: 1,
           name: '点击立即购票',
-          matches: '[text="立即购票"]',
+          matches: 'Button[text="立即购票"]',
+          excludeMatches: '[text="请选择"]',
           action: 'clickCenter',
         },
         {
           key: 2,
           name: '点击立即预定',
-          matches: '[text="立即预定"]',
+          matches: 'Button[text="立即预定"]',
           action: 'clickCenter',
         },
       ],
@@ -51,13 +52,13 @@ export default defineGkdApp({
         {
           key: 1,
           name: '点击再试一次',
-          matches: '[text="再试一次"]',
+          matches: 'Button[text="再试一次"]',
           action: 'clickCenter',
         },
         {
           key: 2,
           name: '点击提交订单',
-          matches: '[text="提交订单"]',
+          matches: 'Button[text="提交订单"]',
           excludeMatches: '[text="再试一次"]',
           action: 'clickCenter',
         },
