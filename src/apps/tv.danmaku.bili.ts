@@ -6,24 +6,24 @@ export default defineGkdApp({
   groups: [
     {
       key: 0,
-      name: '自动点击-演唱会购票-立即预定',
-      desc: '自动点击"立即预定"按钮，连点直到按钮状态变化',
+      name: '自动点击-演唱会购票',
+      desc: '自动点击"即将开售"/"立即预定"进入订单页，不含灰色"立刻购票"以避免风控',
       resetMatch: 'app',
-      actionCd: 150,
+      actionCd: 200,
       fastQuery: true,
       rules: [
         {
           key: 0,
-          matches: '[text="立即预定"]',
+          matches: '[text="即将开售" || text="立即预定"]',
         },
       ],
     },
     {
       key: 1,
-      name: '自动点击-演唱会购票-提交订单',
-      desc: '遇到"再试一次"时自动放弃点击，等再试一次消失后立即点击提交订单',
+      name: '自动点击-提交订单',
+      desc: '"再试一次"出现时等待，消失后立即点击"提交订单"锁票',
       resetMatch: 'app',
-      actionCd: 50,
+      actionCd: 100,
       fastQuery: true,
       rules: [
         {
@@ -35,10 +35,10 @@ export default defineGkdApp({
     },
     {
       key: 2,
-      name: '自动点击-演唱会购票-再试一次',
-      desc: '极速循环点击"再试一次"直到不再出现',
+      name: '自动点击-再试一次',
+      desc: '极速循环点击"再试一次"直到不再出现，为提交订单扫清障碍',
       resetMatch: 'app',
-      actionCd: 30,
+      actionCd: 50,
       fastQuery: true,
       rules: [
         {
