@@ -9,6 +9,8 @@ export default defineGkdApp({
       name: '自动点击-立即购票',
       desc: '自动点击"立即购票"',
       resetMatch: 'app',
+      forcedTime: 3600000,
+      matchTime: 3600000,
       actionCd: 200,
       fastQuery: true,
       rules: [
