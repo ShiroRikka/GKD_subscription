@@ -6,21 +6,26 @@ export default defineGkdApp({
   groups: [
     {
       key: 0,
-      name: '自动点击-演唱会购票',
-      desc: '自动点击"即将开售"/"立即预定"以及"立即购票"（页面无"倒计时"时）进入订单页',
+      name: '自动点击-立即购票',
+      desc: '自动点击"立即购票"',
       resetMatch: 'app',
       actionCd: 200,
       fastQuery: true,
       rules: [
         {
           key: 0,
-          matches: '[text="即将开售" || text="立即预定"]',
-        },
-        {
-          key: 1,
           matches: 'Button[text="立即购票"]',
-          excludeMatches: '[text="倒计时"]',
         },
+        // rules: [
+        //   {
+        //     key: 0,
+        //     matches: '[text="即将开售" || text="立即预定"]',
+        //   },
+        // {
+        //   key: 1,
+        //   matches: 'Button[text="立即购票"]',
+        //   excludeMatches: '[text="倒计时"]',
+        // },
       ],
     },
     {
