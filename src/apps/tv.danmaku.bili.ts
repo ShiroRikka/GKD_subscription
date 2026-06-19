@@ -31,7 +31,7 @@ export default defineGkdApp({
           key: 1,
           name: '点击立即购票',
           matches: 'Button[text="立即购票"]',
-          excludeMatches: '[text="请选择"]',
+          excludeMatches: '[text*="请选择"]',
           action: 'clickCenter',
         },
         {
