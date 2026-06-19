@@ -13,7 +13,6 @@ export default defineGkdApp({
       fastQuery: true,
       rules: [
         {
-          key: 0,
           matches: 'Button[text="立即购票" || text="立即预定"]',
           excludeMatches: ['TextView[text*="请选择"]'],
         },
