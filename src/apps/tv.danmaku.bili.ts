@@ -5,58 +5,58 @@ export default defineGkdApp({
   name: '哔哩哔哩',
   groups: [
     {
-      key: 0,
-      name: '自动点击-立即购票',
-      desc: '自动点击"立即购票"',
-      resetMatch: 'app',
-      actionCd: 200,
-      fastQuery: true,
-      rules: [
-        {
-          action: 'clickCenter',
-          anyMatches: ['Button[text="立即购票"]', 'Button[text="立即预定"]'],
-          excludeAllMatches: ['*[text*="请选择"]'],
-        },
-      ],
-    },
-    {
       key: 1,
-      name: '自动点击-提交订单',
-      desc: '"再试一次"出现时等待，消失后立即点击"提交订单"锁票',
-      resetMatch: 'app',
-      actionCd: 100,
+      name: '自动点击-演出票-进入抢票页面',
+      desc: '开票前点击"即将开售"进入半屏页面，每次进入该页面只触发一次',
       fastQuery: true,
       rules: [
         {
-          key: 0,
-          matches: '[text="提交订单"]',
-          excludeMatches: '[text="再试一次"]',
+          key: 1,
+          name: '点击即将开售',
+          matches: '[text="即将开售"]',
+          actionMaximum: 1,
+          actionCd: 2000,
         },
       ],
     },
     {
       key: 2,
-      name: '自动点击-再试一次',
-      desc: '极速循环点击"再试一次"直到不再出现，为提交订单扫清障碍',
-      resetMatch: 'app',
-      actionCd: 50,
+      name: '自动点击-演出票-购票/预定按钮',
+      desc: '倒计时结束后自动点击变为可点击状态的"立即购票"或"立即预定"按钮',
       fastQuery: true,
+      actionCd: 300,
       rules: [
         {
-          key: 0,
+          key: 1,
+          name: '点击立即购票',
+          matches: '[text="立即购票"][clickable=true]',
+        },
+        {
+          key: 2,
+          name: '点击立即预定',
+          matches: '[text="立即预定"][clickable=true]',
+        },
+      ],
+    },
+    {
+      key: 3,
+      name: '自动点击-演出票-提交订单循环',
+      desc: '自动循环点击"再试一次"；"再试一次"消失后立即点击"提交订单"',
+      fastQuery: true,
+      actionCd: 300,
+      rules: [
+        {
+          key: 1,
+          name: '点击再试一次',
           matches: '[text="再试一次"]',
+        },
+        {
+          key: 2,
+          name: '点击提交订单',
+          matches: '[text="提交订单"][clickable=true]',
+          excludeMatches: '[text="再试一次"]',
         },
       ],
     },
   ],
 });
-// rules: [
-//   {
-//     key: 0,
-//     matches: '[text="即将开售" || text="立即预定"]',
-//   },
-// {
-//   key: 1,
-//   matches: 'Button[text="立即购票"]',
-//   excludeMatches: '[text="倒计时"]',
-// },
