@@ -6,7 +6,7 @@ export default defineGkdApp({
   groups: [
     {
       key: 1,
-      name: '自动点击-抢票-购票/预定按钮',
+      name: '自动点击-抢票-合计+购票/预定',
       desc: '倒计时结束后自动点击变为可点击状态的"立即购票"或"立即预定"按钮',
       forcedTime: 7200000,
       actionCd: 0,
@@ -30,7 +30,7 @@ export default defineGkdApp({
     },
     {
       key: 2,
-      name: '自动点击-抢票-提交订单循环',
+      name: '自动点击-抢票-提交订单+再试一次',
       desc: '自动循环点击"再试一次"；"再试一次"消失后立即点击"提交订单"',
       forcedTime: 7200000,
       actionCd: 0,
@@ -47,6 +47,23 @@ export default defineGkdApp({
           name: '点击提交订单',
           matches: 'TextView[text*="合计"] +(n) Button[text="提交订单"]',
           excludeMatches: '[text="再试一次"]',
+          action: 'clickCenter',
+        },
+      ],
+    },
+    {
+      key: 3,
+      name: '自动点击-蹲回流票-立即购票',
+      desc: '[测试功能，谨慎使用]你来刷新，我来点，我们是最棒的！',
+      enable: false,
+      forcedTime: 7200000,
+      actionCd: 0,
+      resetMatch: 'app',
+      rules: [
+        {
+          key: 1,
+          name: '点击立即购票',
+          matches: 'Button[text="立即购票"]',
           action: 'clickCenter',
         },
       ],
