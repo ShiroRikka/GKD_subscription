@@ -6,11 +6,11 @@ export default defineGkdApp({
   groups: [
     {
       key: 1,
-      name: '自动点击-演出票-购票/预定按钮',
+      name: '自动点击-抢票-购票/预定按钮',
       desc: '倒计时结束后自动点击变为可点击状态的"立即购票"或"立即预定"按钮',
-      fastQuery: true,
       forcedTime: 7200000,
       actionCd: 0,
+      resetMatch: 'app',
       rules: [
         {
           key: 1,
@@ -30,11 +30,11 @@ export default defineGkdApp({
     },
     {
       key: 2,
-      name: '自动点击-演出票-提交订单循环',
+      name: '自动点击-抢票-提交订单循环',
       desc: '自动循环点击"再试一次"；"再试一次"消失后立即点击"提交订单"',
-      fastQuery: true,
       forcedTime: 7200000,
       actionCd: 0,
+      resetMatch: 'app',
       rules: [
         {
           key: 1,
