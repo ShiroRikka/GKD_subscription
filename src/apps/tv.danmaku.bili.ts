@@ -30,8 +30,8 @@ export default defineGkdApp({
     },
     {
       key: 2,
-      name: '自动点击-抢票-提交订单+再试一次',
-      desc: '自动循环点击"再试一次"；"再试一次"消失后立即点击"提交订单"',
+      name: '自动点击-抢票-再试一次',
+      desc: '自动点击"再试一次"',
       forcedTime: 7200000,
       actionCd: 0,
       resetMatch: 'app',
@@ -42,8 +42,18 @@ export default defineGkdApp({
           matches: 'Button[text="再试一次"]',
           action: 'clickCenter',
         },
+      ],
+    },
+    {
+      key: 3,
+      name: '自动点击-抢票-提交订单',
+      desc: '页面中不存在"再试一次"时点击"提交订单"',
+      forcedTime: 7200000,
+      actionCd: 0,
+      resetMatch: 'app',
+      rules: [
         {
-          key: 2,
+          key: 1,
           name: '点击提交订单',
           matches: 'TextView[text*="合计"] +(n) Button[text="提交订单"]',
           excludeMatches: '[text="再试一次"]',
@@ -52,7 +62,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 3,
+      key: 4,
       name: '自动点击-蹲回流票-立即购票',
       desc: '[测试功能，谨慎使用]你来刷新，我来点，我们是最棒的！',
       enable: false,
