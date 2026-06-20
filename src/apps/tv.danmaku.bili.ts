@@ -73,7 +73,10 @@ export default defineGkdApp({
         {
           key: 1,
           name: '点击首页的立即购票',
-          matches: ['[text="活动介绍"]', 'Button[text="立即购票"]'],
+          matches: [
+            '[text="活动介绍"]',
+            'Button[text="立即购票" || text="立即预定"]',
+          ],
           excludeMatches: '[text^="请选择"]',
           action: 'clickCenter',
         },
@@ -95,7 +98,8 @@ export default defineGkdApp({
           key: 4,
           name: '点击合计立即购票',
           preKeys: [3],
-          matches: 'TextView[text*="合计"] +(n) Button[text="立即购票"]',
+          matches:
+            'TextView[text*="合计"] +(n) Button[text="立即购票" || text="立即预定"]',
           excludeMatches: '[text^="请选择"]',
           action: 'clickCenter',
         },
