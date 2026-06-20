@@ -7,7 +7,7 @@ export default defineGkdApp({
     {
       key: 1,
       name: '自动点击-抢票-合计+购票/预定',
-      desc: '倒计时结束后自动点击变为可点击状态的"立即购票"或"立即预定"按钮',
+      desc: '自动点击合计页面的"立即购票"或"立即预定"按钮',
       forcedTime: 7200000,
       actionCd: 0,
       resetMatch: 'app',
@@ -73,7 +73,8 @@ export default defineGkdApp({
         {
           key: 1,
           name: '点击首页的立即购票',
-          matches: 'Button[text="立即购票"]',
+          matches: ['[text="活动介绍"]', 'Button[text="立即购票"]'],
+          excludeMatches: '[text^="请选择"]',
           action: 'clickCenter',
         },
         {
