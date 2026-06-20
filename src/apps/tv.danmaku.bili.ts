@@ -33,7 +33,7 @@ export default defineGkdApp({
       name: '自动点击-抢票-再试一次',
       desc: '自动点击"再试一次"',
       forcedTime: 7200000,
-      actionCd: 0,
+      actionCd: 350,
       resetMatch: 'app',
       rules: [
         {
@@ -49,7 +49,7 @@ export default defineGkdApp({
       name: '自动点击-抢票-提交订单',
       desc: '页面中不存在"再试一次"时点击"提交订单"',
       forcedTime: 7200000,
-      actionCd: 0,
+      actionCd: 350,
       resetMatch: 'app',
       rules: [
         {

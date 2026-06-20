@@ -4,6 +4,5 @@ export default defineGkdCategories([
   {
     key: 0,
     name: '自动点击',
-    enable: true,
   },
 ]);
